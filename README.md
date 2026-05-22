@@ -53,6 +53,7 @@ gh infra import hirokisakabe/<repo-name> > repos/<repo-name>.yaml
 |------|--------|
 | Administration | Read and write |
 | Contents | Read-only |
+| Issues | Read-only |
 | Secrets | Read-only |
 | Variables | Read-only |
 
