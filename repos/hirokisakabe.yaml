@@ -1,0 +1,164 @@
+apiVersion: gh-infra/v1
+kind: RepositorySet
+metadata:
+  owner: hirokisakabe
+
+defaults:
+  spec:
+    features:
+      wiki: false
+
+repositories:
+  - name: github-config
+  - name: dotfiles
+    spec:
+      topics: [dotfiles]
+  - name: tatami
+  - name: tascal
+    spec:
+      topics: [app, calendar, productivity, task-management, todo]
+  - name: bkmk
+  - name: pom
+    spec:
+      topics: [declarative, flexbox, layout, office, powerpoint, pptx, pptxgenjs, presentation, slides, typescript]
+  - name: locus
+  - name: hirokisakabe.com
+    spec:
+      topics: [astro, vercel]
+  - name: pptx-glimpse
+    spec:
+      topics: [converter, png, powerpoint, pptx, pptx-viewer, presentation, slides, svg, typescript]
+  - name: me
+  - name: pom-ai
+  - name: hirokisakabe-nihonshi
+  - name: zenn
+    spec:
+      topics: [zenn]
+  - name: tanstack-start-rsc-modal-sample
+  - name: conote
+  - name: issuekit
+    spec:
+      topics: [agent-skills, claude-code, claude-code-skills, issue-driven-development, skills-sh]
+  - name: md-pptx
+    spec:
+      topics: [markdown, markdown-to-pptx, powerpoint, pptx, vscode-extension]
+  - name: pkm-kit
+  - name: hirokisakabe-geo
+  - name: payview
+    spec:
+      topics: [daisyui, react, tailwindcss, tanstack-router]
+  - name: pptx-ai
+    spec:
+      topics: [ai, app, pptx]
+  - name: hub
+  - name: kimari
+    spec:
+      topics: [app]
+  - name: shirase
+    spec:
+      topics: [app, vercel]
+  - name: pptx-ai-studio
+    spec:
+      topics: [app, claude, cloudrun, hono, mastra, pptx, react]
+  - name: ugui
+  - name: kiretell
+  - name: mcp-pptx-preview
+  - name: kappa-in-river-flow
+    spec:
+      topics: [app]
+  - name: aws-ai-chat-sample
+  - name: serifuai
+  - name: pptx-ai-editor
+  - name: slide
+    spec:
+      topics: [marp]
+  - name: pptxify
+    spec:
+      topics: [wip]
+  - name: tuubi
+    spec:
+      topics: [nextjs, tailwindcss, youtube]
+  - name: nobiru
+    spec:
+      topics: [wip]
+  - name: pptx-forge
+    spec:
+      topics: [python, python-pptx, wip]
+  - name: deborah
+    spec:
+      topics: [wip]
+  - name: copilotkit-a2ui-sample
+    spec:
+      topics: [a2ui, copilotkit, mastra, nextjs]
+  - name: react-hono-sample
+  - name: migaka
+    spec:
+      topics: [app]
+  - name: pglite-sample
+  - name: my-geo-timeline
+  - name: mastra-workflow-stream-to-clientslide-sample
+    spec:
+      topics: [hono, mastra, sample]
+  - name: icon
+  - name: azure-application-insights-nextjs-sample
+    spec:
+      topics: [azure, nextjs, sample]
+  - name: hono-authjs-sample
+    spec:
+      topics: [authjs, hono, sample]
+  - name: document-search
+  - name: tento
+  - name: azure-terraform-sample
+  - name: faq-sample
+  - name: langsmith-evaluator-sample
+  - name: github-activity-dashboard
+    spec:
+      topics: [app, nextjs, tailwindcss, tremor]
+  - name: commitboard
+  - name: repo-advisor
+    spec:
+      topics: [github, nextjs, openai, tailwindcss, vercel]
+  - name: meeting-report-generator
+    spec:
+      topics: [openai]
+  - name: rag-on-vercel-sample
+    spec:
+      topics: [openai, vercel]
+  - name: redis-as-cache-for-postgres
+  - name: rag-with-search-engine-ui
+  - name: rag-sample
+    spec:
+      topics: [elasticsearch, langchain, nextjs, openai, rag]
+  - name: ai-chatbot-on-azure
+    spec:
+      topics: [ai, azure, chatgpt]
+  - name: pr-message-to-slack
+    spec:
+      topics: [actions, github-actions, pull-requests, slack]
+  - name: k8s-kind-demo
+  - name: appsync-javascript-mapping-template-sample
+    spec:
+      topics: [wip]
+  - name: seaborn-lambda-slack-sample
+    spec:
+      topics: [aws, example, python, seaborn, slack]
+  - name: career
+  - name: access-to-gcp-resources-from-gke-sample
+  - name: gcp-k8s-terraform-sandbox
+  - name: blog
+  - name: terraform-ecs-sample
+  - name: fargate-cdk-l2-construct-sample
+    spec:
+      topics: [aws-cdk, aws-fargate, example, typescript]
+  - name: aws-note-app
+  - name: movielens-sample
+  - name: dynamodb-local-actions-sample
+  - name: sample-slack-app
+  - name: fargate-cdk-sample
+    spec:
+      topics: [aws-cdk, aws-fargate, example, typescript]
+  - name: hirokisakabe
+  - name: free-clock
+    spec:
+      topics: [app]
+  - name: note
