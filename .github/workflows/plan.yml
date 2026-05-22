@@ -13,6 +13,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Install gh-infra
+        env:
+          GH_TOKEN: ${{ secrets.GH_INFRA_TOKEN }}
+        run: gh extension install babarot/gh-infra
+
       - name: Plan
         id: plan
         env:
