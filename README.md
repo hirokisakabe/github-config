@@ -42,6 +42,18 @@ gh infra import hirokisakabe/<repo-name> > repos/<repo-name>.yaml
 
 | シークレット名 | 説明 |
 |----------------|------|
-| `GH_INFRA_TOKEN` | リポジトリ管理権限を持つ PAT (classic) |
+| `GH_INFRA_TOKEN` | Fine-grained PAT（下記権限を付与） |
 
-PAT に必要なスコープ: `repo`, `admin:org` (必要に応じて)
+#### Fine-grained PAT の設定
+
+- **Repository access**: All repositories
+- **Repository permissions**:
+
+| 権限 | レベル |
+|------|--------|
+| Administration | Read and write |
+| Contents | Read-only |
+| Secrets | Read-only |
+| Variables | Read-only |
+
+> classic PAT は権限が広すぎるため使用しないこと。
