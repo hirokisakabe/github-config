@@ -8,6 +8,8 @@ defaults:
     features:
       wiki: false
       projects: false
+    merge_strategy:
+      auto_delete_head_branches: true
 
 repositories:
   - name: github-config
