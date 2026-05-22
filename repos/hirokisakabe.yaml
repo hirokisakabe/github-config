@@ -44,14 +44,12 @@ repositories:
     spec:
       topics: [zenn]
   - name: tanstack-start-rsc-modal-sample
-  - name: conote
   - name: issuekit
     spec:
       topics: [agent-skills, claude-code, claude-code-skills, issue-driven-development, skills-sh]
   - name: md-pptx
     spec:
       topics: [markdown, markdown-to-pptx, powerpoint, pptx, vscode-extension]
-  - name: pkm-kit
   - name: hirokisakabe-geo
   - name: payview
     spec:
@@ -66,9 +64,6 @@ repositories:
   - name: shirase
     spec:
       topics: [app, vercel]
-  - name: pptx-ai-studio
-    spec:
-      topics: [app, claude, cloudrun, hono, mastra, pptx, react]
   - name: ugui
   - name: kiretell
   - name: mcp-pptx-preview
@@ -77,22 +72,15 @@ repositories:
       topics: [app]
   - name: aws-ai-chat-sample
   - name: serifuai
-  - name: pptx-ai-editor
   - name: slide
     spec:
       topics: [marp]
-  - name: pptxify
-    spec:
-      topics: [wip]
   - name: tuubi
     spec:
       topics: [nextjs, tailwindcss, youtube]
   - name: nobiru
     spec:
       topics: [wip]
-  - name: pptx-forge
-    spec:
-      topics: [python, python-pptx, wip]
   - name: deborah
     spec:
       topics: [wip]
@@ -120,13 +108,6 @@ repositories:
   - name: azure-terraform-sample
   - name: faq-sample
   - name: langsmith-evaluator-sample
-  - name: github-activity-dashboard
-    spec:
-      topics: [app, nextjs, tailwindcss, tremor]
-  - name: commitboard
-  - name: repo-advisor
-    spec:
-      topics: [github, nextjs, openai, tailwindcss, vercel]
   - name: meeting-report-generator
     spec:
       topics: [openai]
@@ -141,9 +122,6 @@ repositories:
   - name: ai-chatbot-on-azure
     spec:
       topics: [ai, azure, chatgpt]
-  - name: pr-message-to-slack
-    spec:
-      topics: [actions, github-actions, pull-requests, slack]
   - name: k8s-kind-demo
   - name: appsync-javascript-mapping-template-sample
     spec:
@@ -153,13 +131,10 @@ repositories:
       topics: [aws, example, python, seaborn, slack]
   - name: career
   - name: access-to-gcp-resources-from-gke-sample
-  - name: gcp-k8s-terraform-sandbox
-  - name: blog
   - name: terraform-ecs-sample
   - name: fargate-cdk-l2-construct-sample
     spec:
       topics: [aws-cdk, aws-fargate, example, typescript]
-  - name: aws-note-app
   - name: movielens-sample
   - name: dynamodb-local-actions-sample
   - name: sample-slack-app
