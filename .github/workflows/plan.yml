@@ -23,7 +23,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_INFRA_TOKEN }}
         run: |
-          output=$(gh infra plan ./repos/ 2>&1)
+          output=$(gh infra plan ./repos/ 2>&1 | sed 's/\x1B\[[0-9;]*[mK]//g')
           echo "output<<EOF" >> $GITHUB_OUTPUT
           echo "$output" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
