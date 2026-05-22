@@ -1,0 +1,8 @@
+apiVersion: gh-infra/v1
+kind: Repository
+metadata:
+  name: github-config
+  owner: hirokisakabe
+spec:
+  features:
+    wiki: false
