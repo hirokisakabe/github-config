@@ -7,9 +7,16 @@ defaults:
   spec:
     features:
       wiki: false
+      projects: false
 
 repositories:
   - name: github-config
+    spec:
+      branch_protection:
+        - pattern: main
+          required_reviews: 0
+          allow_force_pushes: false
+          allow_deletions: false
   - name: dotfiles
     spec:
       topics: [dotfiles]
