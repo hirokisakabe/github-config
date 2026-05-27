@@ -37,8 +37,8 @@ jobs:
           reset=$(echo "$info" | jq -r '.reset')
           reset_iso=$(date -u -d "@$reset" '+%Y-%m-%dT%H:%M:%SZ')
           echo "::notice::Rate limit before apply: remaining=$remaining used=$used reset=$reset_iso"
-          if [ "$remaining" -lt 500 ]; then
-            echo "::error::Rate limit too low (remaining=$remaining < 500) to start apply safely. Reset at $reset_iso. Rerun after reset."
+          if [ "$remaining" -lt 1000 ]; then
+            echo "::error::Rate limit too low (remaining=$remaining < 1000) to start apply safely. Reset at $reset_iso. Rerun after reset."
             exit 1
           fi
 
@@ -47,6 +47,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_INFRA_TOKEN }}
         run: |
           set +e
+          set -o pipefail
           output=$(gh infra apply "$TARGET" --auto-approve 2>&1 | sed 's/\x1B\[[0-9;]*[mK]//g')
           status=$?
           echo "$output"
