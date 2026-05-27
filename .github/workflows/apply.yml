@@ -1,14 +1,24 @@
 name: Apply
 
+# main push 時の自動 apply に加え、workflow_dispatch で手動 apply も可能。
+# rate limit 消費を把握できるよう前後でログを出す。
 on:
   push:
     branches: [main]
+  workflow_dispatch:
+    inputs:
+      target:
+        description: 'apply の対象 path (file または directory)。省略時は ./repos/ 全体。'
+        required: false
+        default: './repos/'
 
 jobs:
   apply:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+    env:
+      TARGET: ${{ github.event.inputs.target || './repos/' }}
     steps:
       - uses: actions/checkout@v4
 
@@ -17,7 +27,47 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_INFRA_TOKEN }}
         run: gh extension install babarot/gh-infra
 
+      - name: Check rate limit (before)
+        env:
+          GH_TOKEN: ${{ secrets.GH_INFRA_TOKEN }}
+        run: |
+          info=$(gh api rate_limit --jq '.resources.core')
+          remaining=$(echo "$info" | jq -r '.remaining')
+          used=$(echo "$info" | jq -r '.used')
+          reset=$(echo "$info" | jq -r '.reset')
+          reset_iso=$(date -u -d "@$reset" '+%Y-%m-%dT%H:%M:%SZ')
+          echo "::notice::Rate limit before apply: remaining=$remaining used=$used reset=$reset_iso"
+          if [ "$remaining" -lt 1000 ]; then
+            echo "::error::Rate limit too low (remaining=$remaining < 1000) to start apply safely. Reset at $reset_iso. Rerun after reset."
+            exit 1
+          fi
+
       - name: Apply
         env:
           GH_TOKEN: ${{ secrets.GH_INFRA_TOKEN }}
-        run: gh infra apply ./repos/ --auto-approve
+        run: |
+          set +e
+          set -o pipefail
+          output=$(gh infra apply "$TARGET" --auto-approve 2>&1 | sed 's/\x1B\[[0-9;]*[mK]//g')
+          status=$?
+          echo "$output"
+          if echo "$output" | grep -qiE 'API rate limit exceeded|rate limit.*(403|exceeded)'; then
+            info=$(gh api rate_limit --jq '.resources.core')
+            reset=$(echo "$info" | jq -r '.reset')
+            reset_iso=$(date -u -d "@$reset" '+%Y-%m-%dT%H:%M:%SZ')
+            echo "::error::gh infra apply hit GitHub API rate limit. Reset at $reset_iso. Do not retry until then; rerun this job after reset."
+            exit 1
+          fi
+          exit "$status"
+
+      - name: Check rate limit (after)
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GH_INFRA_TOKEN }}
+        run: |
+          info=$(gh api rate_limit --jq '.resources.core')
+          remaining=$(echo "$info" | jq -r '.remaining')
+          used=$(echo "$info" | jq -r '.used')
+          reset=$(echo "$info" | jq -r '.reset')
+          reset_iso=$(date -u -d "@$reset" '+%Y-%m-%dT%H:%M:%SZ')
+          echo "::notice::Rate limit after apply: remaining=$remaining used=$used reset=$reset_iso"

@@ -1,8 +1,20 @@
 name: Plan
 
+# repos/ 以下または本 workflow 自体に変更がある PR でのみ起動する。
+# rate limit 消費が大きい `gh infra plan` を常に走らせない設計。
+# 詳細は README の「plan / apply の運用」を参照。
 on:
   pull_request:
     branches: [main]
+    paths:
+      - 'repos/**'
+      - '.github/workflows/plan.yml'
+  workflow_dispatch:
+    inputs:
+      target:
+        description: 'plan の対象 path (file または directory)。省略時は ./repos/ 全体。'
+        required: false
+        default: './repos/'
 
 jobs:
   plan:
@@ -10,6 +22,8 @@ jobs:
     permissions:
       contents: read
       pull-requests: write
+    env:
+      TARGET: ${{ github.event.inputs.target || './repos/' }}
     steps:
       - uses: actions/checkout@v4
 
@@ -18,17 +32,62 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_INFRA_TOKEN }}
         run: gh extension install babarot/gh-infra
 
+      - name: Validate
+        env:
+          GH_TOKEN: ${{ secrets.GH_INFRA_TOKEN }}
+        run: gh infra validate "$TARGET"
+
+      - name: Check rate limit (before)
+        env:
+          GH_TOKEN: ${{ secrets.GH_INFRA_TOKEN }}
+        run: |
+          info=$(gh api rate_limit --jq '.resources.core')
+          remaining=$(echo "$info" | jq -r '.remaining')
+          used=$(echo "$info" | jq -r '.used')
+          reset=$(echo "$info" | jq -r '.reset')
+          reset_iso=$(date -u -d "@$reset" '+%Y-%m-%dT%H:%M:%SZ')
+          echo "::notice::Rate limit before plan: remaining=$remaining used=$used reset=$reset_iso"
+          if [ "$remaining" -lt 1000 ]; then
+            echo "::error::Rate limit too low (remaining=$remaining < 1000) to start plan safely. Reset at $reset_iso. Rerun after reset."
+            exit 1
+          fi
+
       - name: Plan
         id: plan
         env:
           GH_TOKEN: ${{ secrets.GH_INFRA_TOKEN }}
         run: |
-          output=$(gh infra plan ./repos/ 2>&1 | sed 's/\x1B\[[0-9;]*[mK]//g')
-          echo "output<<EOF" >> $GITHUB_OUTPUT
-          echo "$output" >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
+          set +e
+          set -o pipefail
+          output=$(gh infra plan "$TARGET" 2>&1 | sed 's/\x1B\[[0-9;]*[mK]//g')
+          status=$?
+          echo "output<<EOF" >> "$GITHUB_OUTPUT"
+          echo "$output" >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+          echo "$output"
+          if echo "$output" | grep -qiE 'API rate limit exceeded|rate limit.*(403|exceeded)'; then
+            info=$(gh api rate_limit --jq '.resources.core')
+            reset=$(echo "$info" | jq -r '.reset')
+            reset_iso=$(date -u -d "@$reset" '+%Y-%m-%dT%H:%M:%SZ')
+            echo "::error::gh infra plan hit GitHub API rate limit. Reset at $reset_iso. Do not retry until then; rerun this job after reset."
+            exit 1
+          fi
+          exit "$status"
+
+      - name: Check rate limit (after)
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GH_INFRA_TOKEN }}
+        run: |
+          info=$(gh api rate_limit --jq '.resources.core')
+          remaining=$(echo "$info" | jq -r '.remaining')
+          used=$(echo "$info" | jq -r '.used')
+          reset=$(echo "$info" | jq -r '.reset')
+          reset_iso=$(date -u -d "@$reset" '+%Y-%m-%dT%H:%M:%SZ')
+          echo "::notice::Rate limit after plan: remaining=$remaining used=$used reset=$reset_iso"
 
       - name: Comment plan result
+        if: github.event_name == 'pull_request'
         uses: actions/github-script@v7
         with:
           script: |
