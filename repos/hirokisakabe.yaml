@@ -13,6 +13,7 @@ defaults:
     branch_protection:
       - pattern: main
         required_reviews: 0
+        enforce_admins: true
         allow_force_pushes: false
         allow_deletions: false
 
