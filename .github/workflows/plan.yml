@@ -62,10 +62,10 @@ jobs:
           raw=$(gh infra plan "$TARGET" 2>&1 | sed 's/\x1B\[[0-9;]*[mK]//g')
           status=$?
 
-          # OSCエスケープシーケンス（ターミナル用ハイパーリンク ESC]8;;URL BEL）を除去
-          cleaned=$(printf '%s\n' "$raw" | perl -pe 's/\x1b\]8;;.*?\x07//g')
+          # OSCエスケープシーケンス（ターミナル用ハイパーリンク: BEL終端またはST終端）を除去
+          cleaned=$(printf '%s\n' "$raw" | perl -pe 's/\x1b\]8;;.*?(?:\x07|\x1b\\)//g')
 
-          if printf '%s\n' "$cleaned" | grep -q '^No changes\.'; then
+          if [ "$status" -eq 0 ] && printf '%s\n' "$cleaned" | grep -q '^No changes\.'; then
             output="No changes. Infrastructure is up-to-date."
           else
             summary=$(printf '%s\n' "$cleaned" | grep -E '^Plan: ')
