@@ -8,6 +8,7 @@ defaults:
     features:
       wiki: false
       projects: false
+      discussions: false
     merge_strategy:
       auto_delete_head_branches: true
     branch_protection:
