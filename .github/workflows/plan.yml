@@ -59,13 +59,34 @@ jobs:
         run: |
           set +e
           set -o pipefail
-          output=$(gh infra plan "$TARGET" 2>&1 | sed 's/\x1B\[[0-9;]*[mK]//g')
+          raw=$(gh infra plan "$TARGET" 2>&1 | sed 's/\x1B\[[0-9;]*[mK]//g')
           status=$?
+
+          # OSCエスケープシーケンス（ターミナル用ハイパーリンク ESC]8;;URL BEL）を除去
+          cleaned=$(printf '%s\n' "$raw" | perl -pe 's/\x1b\]8;;.*?\x07//g')
+
+          if printf '%s\n' "$cleaned" | grep -q '^No changes\.'; then
+            output="No changes. Infrastructure is up-to-date."
+          else
+            summary=$(printf '%s\n' "$cleaned" | grep -E '^Plan: ')
+            body=$(printf '%s\n' "$cleaned" \
+              | grep -vE '^[[:space:]]+[^[:space:]]+/[^[:space:]]+\.\.\.$' \
+              | grep -vE '^(Reading desired state|Fetching current state) from' \
+              | grep -vE '^Plan: ' \
+              | grep -vE '^To apply, run:' \
+              | awk '/^[[:space:]]*$/{blank++; next} {if(printed && blank>0) print ""; blank=0; printed=1; print}')
+            if [ -n "$summary" ]; then
+              output=$(printf '%s\n\n%s' "$summary" "$body")
+            else
+              output="$body"
+            fi
+          fi
+
           echo "output<<EOF" >> "$GITHUB_OUTPUT"
-          echo "$output" >> "$GITHUB_OUTPUT"
+          printf '%s\n' "$output" >> "$GITHUB_OUTPUT"
           echo "EOF" >> "$GITHUB_OUTPUT"
-          echo "$output"
-          if echo "$output" | grep -qiE 'API rate limit exceeded|rate limit.*(403|exceeded)'; then
+          printf '%s\n' "$output"
+          if printf '%s\n' "$output" | grep -qiE 'API rate limit exceeded|rate limit.*(403|exceeded)'; then
             info=$(gh api rate_limit --jq '.resources.core')
             reset=$(echo "$info" | jq -r '.reset')
             reset_iso=$(date -u -d "@$reset" '+%Y-%m-%dT%H:%M:%SZ')
