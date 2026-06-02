@@ -147,3 +147,4 @@ repositories:
     spec:
       topics: [app]
   - name: note
+  - name: shirube
