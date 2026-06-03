@@ -4,7 +4,7 @@
 
 ## このリポジトリの概要
 
-`gh infra` を使って GitHub リポジトリの設定を YAML で宣言的に管理するリポジトリ。`repos/` 配下の YAML が source of truth、GitHub 本体が state、差分は `gh infra plan` / `gh infra apply` で扱う。
+`gh infra` を使って GitHub リポジトリの設定を YAML で宣言的に管理するリポジトリ。`repos.yaml` が source of truth、GitHub 本体が state、差分は `gh infra plan` / `gh infra apply` で扱う。
 
 ## `gh infra plan/apply` を local で実行する際の方針
 
@@ -24,7 +24,7 @@
 
 2. **full `plan/apply` を何度も連続実行しない**
 
-    試行錯誤中は `gh infra plan repos/<file>.yaml` のように対象を絞る。同じ full plan を 5 分間に複数回回すと quota を急速に消費する。
+    試行錯誤中は `gh infra plan repos.yaml` のように対象を絞る。同じ full plan を 5 分間に複数回回すと quota を急速に消費する。
 
 3. **large RepositorySet 変更では、実行コマンドと rate limit 残量を作業ログ / PR description に残す**
 
@@ -55,11 +55,11 @@ CI と local の quota を分離したい場合は、CI 用 PAT を別の machin
 
 | Workflow | Trigger | 用途 |
 |----------|---------|------|
-| `plan.yml` | PR (paths: `repos/**` または同 workflow) / `workflow_dispatch` | YAML validate → rate limit check → `gh infra plan` → PR コメント |
+| `plan.yml` | PR (paths: `repos.yaml` または同 workflow) / `workflow_dispatch` | YAML validate → rate limit check → `gh infra plan` → PR コメント |
 | `apply.yml` | `push` to `main` / `workflow_dispatch` | rate limit check → `gh infra apply --auto-approve` |
 
-- **PR plan の発火**: `repos/**` か `plan.yml` 自体に変更がある PR のみ。それ以外 (README 更新だけ等) では plan は走らない。
-- **手動 plan / apply**: Actions タブから `workflow_dispatch` で起動できる。`target` input を空にすると `./repos/` 全体、ファイル/ディレクトリ指定で対象限定 plan/apply。
+- **PR plan の発火**: `repos.yaml` か `plan.yml` 自体に変更がある PR のみ。それ以外 (README 更新だけ等) では plan は走らない。
+- **手動 plan / apply**: Actions タブから `workflow_dispatch` で起動できる。`target` input を空にすると `./repos.yaml` 全体、ファイル指定で対象限定 plan/apply。
 - **rate limit ログ**: 各 workflow の "Check rate limit (before/after)" ステップで `remaining` / `used` / `reset` を notice として出力する。
 - **rate limit 到達時の挙動**: `gh infra plan/apply` の出力に `API rate limit exceeded` などが含まれると、reset 時刻を error annotation に出して非 0 終了する。CI 自動リトライはせず、手動で reset 後に再実行すること。
 

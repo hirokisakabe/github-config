@@ -1,13 +1,13 @@
 # github-config
 
 [gh-infra](https://github.com/babarot/gh-infra) を使って GitHub リポジトリの設定を YAML で宣言的に管理するリポジトリ。<br>
-`repos/` の YAML が source of truth。変更は PR → plan → apply のフローで安全に反映される。
+`repos.yaml` が source of truth。変更は PR → plan → apply のフローで安全に反映される。
 
 ## ローカルで確認・適用する
 
 ```bash
-gh infra plan ./repos/    # 差分確認
-gh infra apply ./repos/   # 適用
+gh infra plan ./repos.yaml    # 差分確認
+gh infra apply ./repos.yaml   # 適用
 ```
 
 > [!WARNING]

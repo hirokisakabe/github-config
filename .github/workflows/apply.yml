@@ -8,9 +8,9 @@ on:
   workflow_dispatch:
     inputs:
       target:
-        description: 'apply の対象 path (file または directory)。省略時は ./repos/ 全体。'
+        description: 'apply の対象 path (file または directory)。省略時は ./repos.yaml 全体。'
         required: false
-        default: './repos/'
+        default: './repos.yaml'
 
 jobs:
   apply:
@@ -18,7 +18,7 @@ jobs:
     permissions:
       contents: read
     env:
-      TARGET: ${{ github.event.inputs.target || './repos/' }}
+      TARGET: ${{ github.event.inputs.target || './repos.yaml' }}
     steps:
       - uses: actions/checkout@v4
 
