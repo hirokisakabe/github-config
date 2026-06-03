@@ -19,45 +19,51 @@ defaults:
         allow_deletions: false
 
 repositories:
+  # --- インフラ・設定 ---
   - name: github-config
   - name: dotfiles
     spec:
       topics: [dotfiles]
+
+  # --- Web サイト・コンテンツ ---
+  - name: hirokisakabe.com
+    spec:
+      topics: [astro, vercel]
+  - name: hirokisakabe
+  - name: me
+  - name: zenn
+    spec:
+      topics: [zenn]
+  - name: slide
+    spec:
+      topics: [marp]
+  - name: career
+  - name: hirokisakabe-nihonshi
+  - name: hirokisakabe-geo
+
+  # --- PPTX / プレゼンテーション ---
+  - name: pom
+    spec:
+      topics: [declarative, flexbox, layout, office, powerpoint, pptx, pptxgenjs, presentation, slides, typescript]
+  - name: pom-ai
+  - name: pptx-glimpse
+    spec:
+      topics: [converter, png, powerpoint, pptx, pptx-viewer, presentation, slides, svg, typescript]
+  - name: pptx-ai
+    spec:
+      topics: [ai, app, pptx]
+  - name: md-pptx
+    spec:
+      topics: [markdown, markdown-to-pptx, powerpoint, pptx, vscode-extension]
+  - name: mcp-pptx-preview
+
+  # --- アプリ ---
   - name: tatami
   - name: tascal
     spec:
       topics: [app, calendar, productivity, task-management, todo]
   - name: bkmk
-  - name: pom
-    spec:
-      topics: [declarative, flexbox, layout, office, powerpoint, pptx, pptxgenjs, presentation, slides, typescript]
   - name: locus
-  - name: hirokisakabe.com
-    spec:
-      topics: [astro, vercel]
-  - name: pptx-glimpse
-    spec:
-      topics: [converter, png, powerpoint, pptx, pptx-viewer, presentation, slides, svg, typescript]
-  - name: me
-  - name: pom-ai
-  - name: hirokisakabe-nihonshi
-  - name: zenn
-    spec:
-      topics: [zenn]
-  - name: tanstack-start-rsc-modal-sample
-  - name: issuekit
-    spec:
-      topics: [agent-skills, claude-code, claude-code-skills, issue-driven-development, skills-sh]
-  - name: md-pptx
-    spec:
-      topics: [markdown, markdown-to-pptx, powerpoint, pptx, vscode-extension]
-  - name: hirokisakabe-geo
-  - name: payview
-    spec:
-      topics: [daisyui, react, tailwindcss, tanstack-router]
-  - name: pptx-ai
-    spec:
-      topics: [ai, app, pptx]
   - name: hub
   - name: kimari
     spec:
@@ -67,55 +73,46 @@ repositories:
       topics: [app, vercel]
   - name: ugui
   - name: kiretell
-  - name: mcp-pptx-preview
   - name: kappa-in-river-flow
     spec:
       topics: [app]
-  - name: aws-ai-chat-sample
-  - name: serifuai
-  - name: slide
+  - name: payview
     spec:
-      topics: [marp]
+      topics: [daisyui, react, tailwindcss, tanstack-router]
   - name: tuubi
     spec:
       topics: [nextjs, tailwindcss, youtube]
+  - name: migaka
+    spec:
+      topics: [app]
+  - name: free-clock
+    spec:
+      topics: [app]
+  - name: icon
+  - name: tento
+  - name: shirube
+  - name: issuekit
+    spec:
+      topics: [agent-skills, claude-code, claude-code-skills, issue-driven-development, skills-sh]
+  - name: my-geo-timeline
+  - name: note
+  - name: serifuai
   - name: nobiru
     spec:
       topics: [wip]
   - name: deborah
     spec:
       topics: [wip]
-  - name: copilotkit-a2ui-sample
-    spec:
-      topics: [a2ui, copilotkit, mastra, nextjs]
-  - name: react-hono-sample
-  - name: migaka
-    spec:
-      topics: [app]
-  - name: pglite-sample
-  - name: my-geo-timeline
-  - name: mastra-workflow-stream-to-clientslide-sample
-    spec:
-      topics: [hono, mastra, sample]
-  - name: icon
-  - name: azure-application-insights-nextjs-sample
-    spec:
-      topics: [azure, nextjs, sample]
-  - name: hono-authjs-sample
-    spec:
-      topics: [authjs, hono, sample]
+
+  # --- サンプル・デモ ---
   - name: document-search
-  - name: tento
-  - name: azure-terraform-sample
   - name: faq-sample
-  - name: langsmith-evaluator-sample
   - name: meeting-report-generator
     spec:
       topics: [openai]
   - name: rag-on-vercel-sample
     spec:
       topics: [openai, vercel]
-  - name: redis-as-cache-for-postgres
   - name: rag-with-search-engine-ui
   - name: rag-sample
     spec:
@@ -123,28 +120,40 @@ repositories:
   - name: ai-chatbot-on-azure
     spec:
       topics: [ai, azure, chatgpt]
-  - name: k8s-kind-demo
+  - name: langsmith-evaluator-sample
+  - name: aws-ai-chat-sample
+  - name: copilotkit-a2ui-sample
+    spec:
+      topics: [a2ui, copilotkit, mastra, nextjs]
+  - name: tanstack-start-rsc-modal-sample
+  - name: react-hono-sample
+  - name: pglite-sample
+  - name: mastra-workflow-stream-to-clientslide-sample
+    spec:
+      topics: [hono, mastra, sample]
+  - name: azure-application-insights-nextjs-sample
+    spec:
+      topics: [azure, nextjs, sample]
+  - name: hono-authjs-sample
+    spec:
+      topics: [authjs, hono, sample]
   - name: appsync-javascript-mapping-template-sample
     spec:
       topics: [wip]
   - name: seaborn-lambda-slack-sample
     spec:
       topics: [aws, example, python, seaborn, slack]
-  - name: career
+  - name: dynamodb-local-actions-sample
+  - name: sample-slack-app
+  - name: redis-as-cache-for-postgres
+  - name: movielens-sample
+  - name: azure-terraform-sample
+  - name: k8s-kind-demo
   - name: access-to-gcp-resources-from-gke-sample
   - name: terraform-ecs-sample
   - name: fargate-cdk-l2-construct-sample
     spec:
       topics: [aws-cdk, aws-fargate, example, typescript]
-  - name: movielens-sample
-  - name: dynamodb-local-actions-sample
-  - name: sample-slack-app
   - name: fargate-cdk-sample
     spec:
       topics: [aws-cdk, aws-fargate, example, typescript]
-  - name: hirokisakabe
-  - name: free-clock
-    spec:
-      topics: [app]
-  - name: note
-  - name: shirube
