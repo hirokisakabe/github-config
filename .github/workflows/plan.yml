@@ -1,20 +1,19 @@
 name: Plan
 
-# repos/ 以下または本 workflow 自体に変更がある PR でのみ起動する。
+# repos.yaml または本 workflow 自体に変更がある PR でのみ起動する。
 # rate limit 消費が大きい `gh infra plan` を常に走らせない設計。
-# 詳細は README の「plan / apply の運用」を参照。
 on:
   pull_request:
     branches: [main]
     paths:
-      - 'repos/**'
+      - 'repos.yaml'
       - '.github/workflows/plan.yml'
   workflow_dispatch:
     inputs:
       target:
-        description: 'plan の対象 path (file または directory)。省略時は ./repos/ 全体。'
+        description: 'plan の対象 path (file または directory)。省略時は ./repos.yaml 全体。'
         required: false
-        default: './repos/'
+        default: './repos.yaml'
 
 jobs:
   plan:
@@ -23,7 +22,7 @@ jobs:
       contents: read
       pull-requests: write
     env:
-      TARGET: ${{ github.event.inputs.target || './repos/' }}
+      TARGET: ${{ github.event.inputs.target || './repos.yaml' }}
     steps:
       - uses: actions/checkout@v4
 
