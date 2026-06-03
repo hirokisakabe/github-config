@@ -103,6 +103,7 @@ repositories:
   - name: deborah
     spec:
       topics: [wip]
+  - name: aze
 
   # --- サンプル・デモ ---
   - name: document-search
@@ -157,3 +158,4 @@ repositories:
   - name: fargate-cdk-sample
     spec:
       topics: [aws-cdk, aws-fargate, example, typescript]
+  - name: bedrock-agent-blazor-demo
