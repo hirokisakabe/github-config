@@ -22,11 +22,13 @@ repositories:
   # --- インフラ・設定 ---
   - name: github-config
     spec:
+      visibility: public
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
   - name: dotfiles
     spec:
+      visibility: public
       topics: [dotfiles]
       security:
         vulnerability_alerts: true
@@ -35,44 +37,52 @@ repositories:
   # --- Web サイト・コンテンツ ---
   - name: hirokisakabe.com
     spec:
+      visibility: public
       topics: [astro, vercel]
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
   - name: hirokisakabe
     spec:
+      visibility: private
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
   - name: me
     spec:
+      visibility: private
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
   - name: zenn
     spec:
+      visibility: private
       topics: [zenn]
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
   - name: slide
     spec:
+      visibility: private
       topics: [marp]
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
   - name: career
     spec:
+      visibility: private
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
   - name: hirokisakabe-nihonshi
     spec:
+      visibility: public
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
   - name: hirokisakabe-geo
     spec:
+      visibility: private
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
@@ -80,35 +90,41 @@ repositories:
   # --- PPTX / プレゼンテーション ---
   - name: pom
     spec:
+      visibility: public
       topics: [declarative, flexbox, layout, office, powerpoint, pptx, pptxgenjs, presentation, slides, typescript]
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
   - name: pom-ai
     spec:
+      visibility: private
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
   - name: pptx-glimpse
     spec:
+      visibility: public
       topics: [converter, png, powerpoint, pptx, pptx-viewer, presentation, slides, svg, typescript]
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
   - name: pptx-ai
     spec:
+      visibility: private
       topics: [ai, app, pptx]
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
   - name: md-pptx
     spec:
+      visibility: public
       topics: [markdown, markdown-to-pptx, powerpoint, pptx, vscode-extension]
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
   - name: mcp-pptx-preview
     spec:
+      visibility: public
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
@@ -116,126 +132,150 @@ repositories:
   # --- アプリ ---
   - name: tatami
     spec:
+      visibility: private
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
   - name: tascal
     spec:
+      visibility: public
       topics: [app, calendar, productivity, task-management, todo]
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
   - name: bkmk
     spec:
+      visibility: public
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
   - name: locus
     spec:
+      visibility: private
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
   - name: hub
     spec:
+      visibility: private
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
   - name: kimari
     spec:
+      visibility: private
       topics: [app]
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
   - name: shirase
     spec:
+      visibility: private
       topics: [app, vercel]
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
   - name: ugui
     spec:
+      visibility: private
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
   - name: kiretell
     spec:
+      visibility: private
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
   - name: kappa-in-river-flow
     spec:
+      visibility: private
       topics: [app]
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
   - name: payview
     spec:
+      visibility: public
       topics: [daisyui, react, tailwindcss, tanstack-router]
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
   - name: tuubi
     spec:
+      visibility: private
       topics: [nextjs, tailwindcss, youtube]
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
   - name: migaka
     spec:
+      visibility: private
       topics: [app]
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
   - name: free-clock
     spec:
+      visibility: public
       topics: [app]
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
   - name: icon
     spec:
+      visibility: private
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
   - name: tento
     spec:
+      visibility: private
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
   - name: shirube
     spec:
+      visibility: public
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
   - name: issuekit
     spec:
+      visibility: public
       topics: [agent-skills, claude-code, claude-code-skills, issue-driven-development, skills-sh]
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
   - name: my-geo-timeline
     spec:
+      visibility: public
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
   - name: note
     spec:
+      visibility: private
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
   - name: serifuai
     spec:
+      visibility: private
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
   - name: nobiru
     spec:
+      visibility: private
       topics: [wip]
   - name: deborah
     spec:
+      visibility: private
       topics: [wip]
   - name: aze
     spec:
+      visibility: public
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
@@ -243,174 +283,203 @@ repositories:
   # --- サンプル・デモ ---
   - name: document-search
     spec:
+      visibility: private
       topics: [sample]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: faq-sample
     spec:
+      visibility: private
       topics: [sample]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: meeting-report-generator
     spec:
+      visibility: public
       topics: [openai, sample]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: rag-on-vercel-sample
     spec:
+      visibility: private
       topics: [openai, sample, vercel]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: rag-with-search-engine-ui
     spec:
+      visibility: private
       topics: [sample]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: rag-sample
     spec:
+      visibility: public
       topics: [elasticsearch, langchain, nextjs, openai, rag, sample]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: ai-chatbot-on-azure
     spec:
+      visibility: public
       topics: [ai, azure, chatgpt, sample]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: langsmith-evaluator-sample
     spec:
+      visibility: public
       topics: [sample]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: aws-ai-chat-sample
     spec:
+      visibility: private
       topics: [sample]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: copilotkit-a2ui-sample
     spec:
+      visibility: public
       topics: [a2ui, copilotkit, mastra, nextjs, sample]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: tanstack-start-rsc-modal-sample
     spec:
+      visibility: public
       topics: [sample]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: react-hono-sample
     spec:
+      visibility: private
       topics: [sample]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: pglite-sample
     spec:
+      visibility: private
       topics: [sample]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: mastra-workflow-stream-to-clientslide-sample
     spec:
+      visibility: public
       topics: [hono, mastra, sample]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: azure-application-insights-nextjs-sample
     spec:
+      visibility: public
       topics: [azure, nextjs, sample]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: hono-authjs-sample
     spec:
+      visibility: public
       topics: [authjs, hono, sample]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: appsync-javascript-mapping-template-sample
     spec:
+      visibility: private
       topics: [sample, wip]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: seaborn-lambda-slack-sample
     spec:
+      visibility: public
       topics: [aws, python, sample, seaborn, slack]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: dynamodb-local-actions-sample
     spec:
+      visibility: public
       topics: [sample]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: sample-slack-app
     spec:
+      visibility: private
       topics: [sample]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: redis-as-cache-for-postgres
     spec:
+      visibility: private
       topics: [sample]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: movielens-sample
     spec:
+      visibility: private
       topics: [sample]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: azure-terraform-sample
     spec:
+      visibility: private
       topics: [sample]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: k8s-kind-demo
     spec:
+      visibility: private
       topics: [sample]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: access-to-gcp-resources-from-gke-sample
     spec:
+      visibility: private
       topics: [sample]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: terraform-ecs-sample
     spec:
+      visibility: private
       topics: [sample]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: fargate-cdk-l2-construct-sample
     spec:
+      visibility: public
       topics: [aws-cdk, aws-fargate, sample, typescript]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: fargate-cdk-sample
     spec:
+      visibility: public
       topics: [aws-cdk, aws-fargate, sample, typescript]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: bedrock-agent-blazor-demo
     spec:
+      visibility: private
       topics: [sample]
       security:
         vulnerability_alerts: false
