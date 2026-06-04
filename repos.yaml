@@ -21,82 +21,213 @@ defaults:
 repositories:
   # --- インフラ・設定 ---
   - name: github-config
+    spec:
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: dotfiles
     spec:
       topics: [dotfiles]
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
 
   # --- Web サイト・コンテンツ ---
   - name: hirokisakabe.com
     spec:
       topics: [astro, vercel]
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: hirokisakabe
+    spec:
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: me
+    spec:
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: zenn
     spec:
       topics: [zenn]
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: slide
     spec:
       topics: [marp]
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: career
+    spec:
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: hirokisakabe-nihonshi
+    spec:
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: hirokisakabe-geo
+    spec:
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
 
   # --- PPTX / プレゼンテーション ---
   - name: pom
     spec:
       topics: [declarative, flexbox, layout, office, powerpoint, pptx, pptxgenjs, presentation, slides, typescript]
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: pom-ai
+    spec:
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: pptx-glimpse
     spec:
       topics: [converter, png, powerpoint, pptx, pptx-viewer, presentation, slides, svg, typescript]
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: pptx-ai
     spec:
       topics: [ai, app, pptx]
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: md-pptx
     spec:
       topics: [markdown, markdown-to-pptx, powerpoint, pptx, vscode-extension]
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: mcp-pptx-preview
+    spec:
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
 
   # --- アプリ ---
   - name: tatami
+    spec:
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: tascal
     spec:
       topics: [app, calendar, productivity, task-management, todo]
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: bkmk
+    spec:
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: locus
+    spec:
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: hub
+    spec:
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: kimari
     spec:
       topics: [app]
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: shirase
     spec:
       topics: [app, vercel]
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: ugui
+    spec:
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: kiretell
+    spec:
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: kappa-in-river-flow
     spec:
       topics: [app]
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: payview
     spec:
       topics: [daisyui, react, tailwindcss, tanstack-router]
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: tuubi
     spec:
       topics: [nextjs, tailwindcss, youtube]
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: migaka
     spec:
       topics: [app]
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: free-clock
     spec:
       topics: [app]
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: icon
+    spec:
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: tento
+    spec:
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: shirube
+    spec:
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: issuekit
     spec:
       topics: [agent-skills, claude-code, claude-code-skills, issue-driven-development, skills-sh]
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: my-geo-timeline
+    spec:
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: note
+    spec:
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: serifuai
+    spec:
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: nobiru
     spec:
       topics: [wip]
@@ -104,58 +235,166 @@ repositories:
     spec:
       topics: [wip]
   - name: aze
+    spec:
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
 
   # --- サンプル・デモ ---
   - name: document-search
+    spec:
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: faq-sample
+    spec:
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: meeting-report-generator
     spec:
       topics: [openai]
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: rag-on-vercel-sample
     spec:
       topics: [openai, vercel]
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: rag-with-search-engine-ui
+    spec:
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: rag-sample
     spec:
       topics: [elasticsearch, langchain, nextjs, openai, rag]
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: ai-chatbot-on-azure
     spec:
       topics: [ai, azure, chatgpt]
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: langsmith-evaluator-sample
+    spec:
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: aws-ai-chat-sample
+    spec:
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: copilotkit-a2ui-sample
     spec:
       topics: [a2ui, copilotkit, mastra, nextjs]
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: tanstack-start-rsc-modal-sample
+    spec:
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: react-hono-sample
+    spec:
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: pglite-sample
+    spec:
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: mastra-workflow-stream-to-clientslide-sample
     spec:
       topics: [hono, mastra, sample]
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: azure-application-insights-nextjs-sample
     spec:
       topics: [azure, nextjs, sample]
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: hono-authjs-sample
     spec:
       topics: [authjs, hono, sample]
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: appsync-javascript-mapping-template-sample
     spec:
       topics: [wip]
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: seaborn-lambda-slack-sample
     spec:
       topics: [aws, example, python, seaborn, slack]
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: dynamodb-local-actions-sample
+    spec:
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: sample-slack-app
+    spec:
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: redis-as-cache-for-postgres
+    spec:
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: movielens-sample
+    spec:
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: azure-terraform-sample
+    spec:
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: k8s-kind-demo
+    spec:
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: access-to-gcp-resources-from-gke-sample
+    spec:
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: terraform-ecs-sample
+    spec:
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: fargate-cdk-l2-construct-sample
     spec:
       topics: [aws-cdk, aws-fargate, example, typescript]
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: fargate-cdk-sample
     spec:
       topics: [aws-cdk, aws-fargate, example, typescript]
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: bedrock-agent-blazor-demo
+    spec:
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
