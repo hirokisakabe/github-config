@@ -21,82 +21,213 @@ defaults:
 repositories:
   # --- インフラ・設定 ---
   - name: github-config
+    spec:
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: dotfiles
     spec:
       topics: [dotfiles]
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
 
   # --- Web サイト・コンテンツ ---
   - name: hirokisakabe.com
     spec:
       topics: [astro, vercel]
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: hirokisakabe
+    spec:
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: me
+    spec:
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: zenn
     spec:
       topics: [zenn]
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: slide
     spec:
       topics: [marp]
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: career
+    spec:
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: hirokisakabe-nihonshi
+    spec:
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: hirokisakabe-geo
+    spec:
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
 
   # --- PPTX / プレゼンテーション ---
   - name: pom
     spec:
       topics: [declarative, flexbox, layout, office, powerpoint, pptx, pptxgenjs, presentation, slides, typescript]
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: pom-ai
+    spec:
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: pptx-glimpse
     spec:
       topics: [converter, png, powerpoint, pptx, pptx-viewer, presentation, slides, svg, typescript]
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: pptx-ai
     spec:
       topics: [ai, app, pptx]
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: md-pptx
     spec:
       topics: [markdown, markdown-to-pptx, powerpoint, pptx, vscode-extension]
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: mcp-pptx-preview
+    spec:
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
 
   # --- アプリ ---
   - name: tatami
+    spec:
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: tascal
     spec:
       topics: [app, calendar, productivity, task-management, todo]
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: bkmk
+    spec:
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: locus
+    spec:
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: hub
+    spec:
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: kimari
     spec:
       topics: [app]
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: shirase
     spec:
       topics: [app, vercel]
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: ugui
+    spec:
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: kiretell
+    spec:
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: kappa-in-river-flow
     spec:
       topics: [app]
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: payview
     spec:
       topics: [daisyui, react, tailwindcss, tanstack-router]
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: tuubi
     spec:
       topics: [nextjs, tailwindcss, youtube]
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: migaka
     spec:
       topics: [app]
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: free-clock
     spec:
       topics: [app]
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: icon
+    spec:
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: tento
+    spec:
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: shirube
+    spec:
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: issuekit
     spec:
       topics: [agent-skills, claude-code, claude-code-skills, issue-driven-development, skills-sh]
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: my-geo-timeline
+    spec:
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: note
+    spec:
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: serifuai
+    spec:
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
   - name: nobiru
     spec:
       topics: [wip]
@@ -104,6 +235,10 @@ repositories:
     spec:
       topics: [wip]
   - name: aze
+    spec:
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
 
   # --- サンプル・デモ ---
   - name: document-search
