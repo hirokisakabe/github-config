@@ -242,55 +242,159 @@ repositories:
 
   # --- サンプル・デモ ---
   - name: document-search
+    spec:
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: faq-sample
+    spec:
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: meeting-report-generator
     spec:
       topics: [openai]
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: rag-on-vercel-sample
     spec:
       topics: [openai, vercel]
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: rag-with-search-engine-ui
+    spec:
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: rag-sample
     spec:
       topics: [elasticsearch, langchain, nextjs, openai, rag]
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: ai-chatbot-on-azure
     spec:
       topics: [ai, azure, chatgpt]
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: langsmith-evaluator-sample
+    spec:
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: aws-ai-chat-sample
+    spec:
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: copilotkit-a2ui-sample
     spec:
       topics: [a2ui, copilotkit, mastra, nextjs]
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: tanstack-start-rsc-modal-sample
+    spec:
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: react-hono-sample
+    spec:
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: pglite-sample
+    spec:
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: mastra-workflow-stream-to-clientslide-sample
     spec:
       topics: [hono, mastra, sample]
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: azure-application-insights-nextjs-sample
     spec:
       topics: [azure, nextjs, sample]
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: hono-authjs-sample
     spec:
       topics: [authjs, hono, sample]
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: appsync-javascript-mapping-template-sample
     spec:
       topics: [wip]
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: seaborn-lambda-slack-sample
     spec:
       topics: [aws, example, python, seaborn, slack]
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: dynamodb-local-actions-sample
+    spec:
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: sample-slack-app
+    spec:
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: redis-as-cache-for-postgres
+    spec:
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: movielens-sample
+    spec:
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: azure-terraform-sample
+    spec:
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: k8s-kind-demo
+    spec:
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: access-to-gcp-resources-from-gke-sample
+    spec:
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: terraform-ecs-sample
+    spec:
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: fargate-cdk-l2-construct-sample
     spec:
       topics: [aws-cdk, aws-fargate, example, typescript]
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: fargate-cdk-sample
     spec:
       topics: [aws-cdk, aws-fargate, example, typescript]
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
   - name: bedrock-agent-blazor-demo
+    spec:
+      security:
+        vulnerability_alerts: false
+        automated_security_fixes: false
