@@ -243,71 +243,79 @@ repositories:
   # --- サンプル・デモ ---
   - name: document-search
     spec:
+      topics: [sample]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: faq-sample
     spec:
+      topics: [sample]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: meeting-report-generator
     spec:
-      topics: [openai]
+      topics: [openai, sample]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: rag-on-vercel-sample
     spec:
-      topics: [openai, vercel]
+      topics: [openai, sample, vercel]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: rag-with-search-engine-ui
     spec:
+      topics: [sample]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: rag-sample
     spec:
-      topics: [elasticsearch, langchain, nextjs, openai, rag]
+      topics: [elasticsearch, langchain, nextjs, openai, rag, sample]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: ai-chatbot-on-azure
     spec:
-      topics: [ai, azure, chatgpt]
+      topics: [ai, azure, chatgpt, sample]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: langsmith-evaluator-sample
     spec:
+      topics: [sample]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: aws-ai-chat-sample
     spec:
+      topics: [sample]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: copilotkit-a2ui-sample
     spec:
-      topics: [a2ui, copilotkit, mastra, nextjs]
+      topics: [a2ui, copilotkit, mastra, nextjs, sample]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: tanstack-start-rsc-modal-sample
     spec:
+      topics: [sample]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: react-hono-sample
     spec:
+      topics: [sample]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: pglite-sample
     spec:
+      topics: [sample]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
@@ -331,70 +339,79 @@ repositories:
         automated_security_fixes: false
   - name: appsync-javascript-mapping-template-sample
     spec:
-      topics: [wip]
+      topics: [sample, wip]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: seaborn-lambda-slack-sample
     spec:
-      topics: [aws, example, python, seaborn, slack]
+      topics: [aws, python, sample, seaborn, slack]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: dynamodb-local-actions-sample
     spec:
+      topics: [sample]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: sample-slack-app
     spec:
+      topics: [sample]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: redis-as-cache-for-postgres
     spec:
+      topics: [sample]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: movielens-sample
     spec:
+      topics: [sample]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: azure-terraform-sample
     spec:
+      topics: [sample]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: k8s-kind-demo
     spec:
+      topics: [sample]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: access-to-gcp-resources-from-gke-sample
     spec:
+      topics: [sample]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: terraform-ecs-sample
     spec:
+      topics: [sample]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: fargate-cdk-l2-construct-sample
     spec:
-      topics: [aws-cdk, aws-fargate, example, typescript]
+      topics: [aws-cdk, aws-fargate, sample, typescript]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: fargate-cdk-sample
     spec:
-      topics: [aws-cdk, aws-fargate, example, typescript]
+      topics: [aws-cdk, aws-fargate, sample, typescript]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
   - name: bedrock-agent-blazor-demo
     spec:
+      topics: [sample]
       security:
         vulnerability_alerts: false
         automated_security_fixes: false
