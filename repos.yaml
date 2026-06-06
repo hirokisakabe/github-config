@@ -253,12 +253,6 @@ repositories:
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
-  - name: note
-    spec:
-      visibility: private
-      security:
-        vulnerability_alerts: true
-        automated_security_fixes: true
   - name: serifuai
     spec:
       visibility: private
