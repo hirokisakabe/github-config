@@ -273,6 +273,12 @@ repositories:
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
+  - name: hashiri
+    spec:
+      visibility: public
+      security:
+        vulnerability_alerts: true
+        automated_security_fixes: true
 
   # --- サンプル・デモ ---
   - name: document-search
