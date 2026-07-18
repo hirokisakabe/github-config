@@ -320,16 +320,6 @@ repositories:
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
-  - name: tento
-    spec:
-      actions:
-        enabled: true
-        workflow_permissions: read
-        can_approve_pull_requests: false
-      visibility: private
-      security:
-        vulnerability_alerts: true
-        automated_security_fixes: true
   - name: shirube
     spec:
       actions:
@@ -361,24 +351,6 @@ repositories:
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
-  - name: serifuai
-    spec:
-      actions:
-        enabled: true
-        workflow_permissions: read
-        can_approve_pull_requests: false
-      visibility: private
-      security:
-        vulnerability_alerts: true
-        automated_security_fixes: true
-  - name: nobiru
-    spec:
-      actions:
-        enabled: true
-        workflow_permissions: read
-        can_approve_pull_requests: false
-      visibility: private
-      topics: [wip]
   - name: deborah
     spec:
       actions:
