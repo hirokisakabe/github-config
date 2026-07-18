@@ -235,28 +235,6 @@ repositories:
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
-  - name: kimari
-    spec:
-      actions:
-        enabled: true
-        workflow_permissions: read
-        can_approve_pull_requests: false
-      visibility: private
-      topics: [app]
-      security:
-        vulnerability_alerts: true
-        automated_security_fixes: true
-  - name: shirase
-    spec:
-      actions:
-        enabled: true
-        workflow_permissions: read
-        can_approve_pull_requests: false
-      visibility: private
-      topics: [app, vercel]
-      security:
-        vulnerability_alerts: true
-        automated_security_fixes: true
   - name: ugui
     spec:
       actions:
