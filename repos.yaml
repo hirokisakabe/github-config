@@ -10,6 +10,9 @@ defaults:
       projects: false
       discussions: false
     merge_strategy:
+      allow_merge_commit: true
+      allow_squash_merge: false
+      allow_rebase_merge: false
       auto_delete_head_branches: true
 repositories:
   # --- インフラ・設定 ---
@@ -889,6 +892,10 @@ spec:
     enabled: true
     workflow_permissions: read
     can_approve_pull_requests: false
+  merge_strategy:
+    allow_merge_commit: true
+    allow_squash_merge: false
+    allow_rebase_merge: false
   visibility: private
   security:
     vulnerability_alerts: true
