@@ -11,13 +11,6 @@ defaults:
       discussions: false
     merge_strategy:
       auto_delete_head_branches: true
-    branch_protection:
-      - pattern: main
-        required_reviews: 0
-        enforce_admins: true
-        allow_force_pushes: false
-        allow_deletions: false
-
 repositories:
   # --- インフラ・設定 ---
   - name: github-config
@@ -27,6 +20,12 @@ repositories:
         workflow_permissions: read
         can_approve_pull_requests: false
       visibility: public
+      branch_protection:
+        - pattern: main
+          required_reviews: 0
+          enforce_admins: true
+          allow_force_pushes: false
+          allow_deletions: false
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
@@ -37,6 +36,12 @@ repositories:
         workflow_permissions: write
         can_approve_pull_requests: true
       visibility: public
+      branch_protection:
+        - pattern: main
+          required_reviews: 0
+          enforce_admins: true
+          allow_force_pushes: false
+          allow_deletions: false
       topics: [dotfiles]
       security:
         vulnerability_alerts: true
@@ -50,6 +55,12 @@ repositories:
         workflow_permissions: read
         can_approve_pull_requests: false
       visibility: public
+      branch_protection:
+        - pattern: main
+          required_reviews: 0
+          enforce_admins: true
+          allow_force_pushes: false
+          allow_deletions: false
       topics: [astro, vercel]
       security:
         vulnerability_alerts: true
@@ -103,6 +114,12 @@ repositories:
         workflow_permissions: read
         can_approve_pull_requests: false
       visibility: public
+      branch_protection:
+        - pattern: main
+          required_reviews: 0
+          enforce_admins: true
+          allow_force_pushes: false
+          allow_deletions: false
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
@@ -125,6 +142,12 @@ repositories:
         workflow_permissions: read
         can_approve_pull_requests: true
       visibility: public
+      branch_protection:
+        - pattern: main
+          required_reviews: 0
+          enforce_admins: true
+          allow_force_pushes: false
+          allow_deletions: false
       topics: [declarative, flexbox, layout, office, powerpoint, pptx, pptxgenjs, presentation, slides, typescript]
       security:
         vulnerability_alerts: true
@@ -146,6 +169,12 @@ repositories:
         workflow_permissions: read
         can_approve_pull_requests: true
       visibility: public
+      branch_protection:
+        - pattern: main
+          required_reviews: 0
+          enforce_admins: true
+          allow_force_pushes: false
+          allow_deletions: false
       topics: [converter, png, powerpoint, pptx, pptx-viewer, presentation, slides, svg, typescript]
       security:
         vulnerability_alerts: true
@@ -168,6 +197,12 @@ repositories:
         workflow_permissions: read
         can_approve_pull_requests: true
       visibility: public
+      branch_protection:
+        - pattern: main
+          required_reviews: 0
+          enforce_admins: true
+          allow_force_pushes: false
+          allow_deletions: false
       topics: [markdown, markdown-to-pptx, powerpoint, pptx, vscode-extension]
       security:
         vulnerability_alerts: true
@@ -179,6 +214,12 @@ repositories:
         workflow_permissions: read
         can_approve_pull_requests: false
       visibility: public
+      branch_protection:
+        - pattern: main
+          required_reviews: 0
+          enforce_admins: true
+          allow_force_pushes: false
+          allow_deletions: false
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
@@ -201,6 +242,12 @@ repositories:
         workflow_permissions: read
         can_approve_pull_requests: true
       visibility: public
+      branch_protection:
+        - pattern: main
+          required_reviews: 0
+          enforce_admins: true
+          allow_force_pushes: false
+          allow_deletions: false
       topics: [app, calendar, productivity, task-management, todo]
       security:
         vulnerability_alerts: true
@@ -212,6 +259,12 @@ repositories:
         workflow_permissions: read
         can_approve_pull_requests: true
       visibility: public
+      branch_protection:
+        - pattern: main
+          required_reviews: 0
+          enforce_admins: true
+          allow_force_pushes: false
+          allow_deletions: false
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
@@ -273,6 +326,12 @@ repositories:
         workflow_permissions: read
         can_approve_pull_requests: false
       visibility: public
+      branch_protection:
+        - pattern: main
+          required_reviews: 0
+          enforce_admins: true
+          allow_force_pushes: false
+          allow_deletions: false
       topics: [daisyui, react, tailwindcss, tanstack-router]
       security:
         vulnerability_alerts: true
@@ -306,6 +365,12 @@ repositories:
         workflow_permissions: write
         can_approve_pull_requests: true
       visibility: public
+      branch_protection:
+        - pattern: main
+          required_reviews: 0
+          enforce_admins: true
+          allow_force_pushes: false
+          allow_deletions: false
       topics: [app]
       security:
         vulnerability_alerts: true
@@ -327,6 +392,12 @@ repositories:
         workflow_permissions: read
         can_approve_pull_requests: true
       visibility: public
+      branch_protection:
+        - pattern: main
+          required_reviews: 0
+          enforce_admins: true
+          allow_force_pushes: false
+          allow_deletions: false
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
@@ -337,6 +408,12 @@ repositories:
         workflow_permissions: read
         can_approve_pull_requests: false
       visibility: public
+      branch_protection:
+        - pattern: main
+          required_reviews: 0
+          enforce_admins: true
+          allow_force_pushes: false
+          allow_deletions: false
       topics: [agent-skills, claude-code, claude-code-skills, issue-driven-development, skills-sh]
       security:
         vulnerability_alerts: true
@@ -348,6 +425,12 @@ repositories:
         workflow_permissions: read
         can_approve_pull_requests: false
       visibility: public
+      branch_protection:
+        - pattern: main
+          required_reviews: 0
+          enforce_admins: true
+          allow_force_pushes: false
+          allow_deletions: false
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
@@ -366,6 +449,12 @@ repositories:
         workflow_permissions: read
         can_approve_pull_requests: true
       visibility: public
+      branch_protection:
+        - pattern: main
+          required_reviews: 0
+          enforce_admins: true
+          allow_force_pushes: false
+          allow_deletions: false
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
@@ -376,6 +465,12 @@ repositories:
         workflow_permissions: read
         can_approve_pull_requests: false
       visibility: public
+      branch_protection:
+        - pattern: main
+          required_reviews: 0
+          enforce_admins: true
+          allow_force_pushes: false
+          allow_deletions: false
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
@@ -410,6 +505,12 @@ repositories:
         workflow_permissions: read
         can_approve_pull_requests: false
       visibility: public
+      branch_protection:
+        - pattern: main
+          required_reviews: 0
+          enforce_admins: true
+          allow_force_pushes: false
+          allow_deletions: false
       topics: [openai, sample]
       security:
         vulnerability_alerts: false
@@ -443,6 +544,12 @@ repositories:
         workflow_permissions: read
         can_approve_pull_requests: false
       visibility: public
+      branch_protection:
+        - pattern: main
+          required_reviews: 0
+          enforce_admins: true
+          allow_force_pushes: false
+          allow_deletions: false
       topics: [elasticsearch, langchain, nextjs, openai, rag, sample]
       security:
         vulnerability_alerts: false
@@ -454,6 +561,12 @@ repositories:
         workflow_permissions: read
         can_approve_pull_requests: false
       visibility: public
+      branch_protection:
+        - pattern: main
+          required_reviews: 0
+          enforce_admins: true
+          allow_force_pushes: false
+          allow_deletions: false
       topics: [ai, azure, chatgpt, sample]
       security:
         vulnerability_alerts: false
@@ -465,6 +578,12 @@ repositories:
         workflow_permissions: read
         can_approve_pull_requests: false
       visibility: public
+      branch_protection:
+        - pattern: main
+          required_reviews: 0
+          enforce_admins: true
+          allow_force_pushes: false
+          allow_deletions: false
       topics: [sample]
       security:
         vulnerability_alerts: false
@@ -487,6 +606,12 @@ repositories:
         workflow_permissions: read
         can_approve_pull_requests: false
       visibility: public
+      branch_protection:
+        - pattern: main
+          required_reviews: 0
+          enforce_admins: true
+          allow_force_pushes: false
+          allow_deletions: false
       topics: [a2ui, copilotkit, mastra, nextjs, sample]
       security:
         vulnerability_alerts: false
@@ -498,6 +623,12 @@ repositories:
         workflow_permissions: read
         can_approve_pull_requests: false
       visibility: public
+      branch_protection:
+        - pattern: main
+          required_reviews: 0
+          enforce_admins: true
+          allow_force_pushes: false
+          allow_deletions: false
       topics: [sample]
       security:
         vulnerability_alerts: false
@@ -531,6 +662,12 @@ repositories:
         workflow_permissions: read
         can_approve_pull_requests: false
       visibility: public
+      branch_protection:
+        - pattern: main
+          required_reviews: 0
+          enforce_admins: true
+          allow_force_pushes: false
+          allow_deletions: false
       topics: [hono, mastra, sample]
       security:
         vulnerability_alerts: false
@@ -542,6 +679,12 @@ repositories:
         workflow_permissions: read
         can_approve_pull_requests: false
       visibility: public
+      branch_protection:
+        - pattern: main
+          required_reviews: 0
+          enforce_admins: true
+          allow_force_pushes: false
+          allow_deletions: false
       topics: [azure, nextjs, sample]
       security:
         vulnerability_alerts: false
@@ -553,6 +696,12 @@ repositories:
         workflow_permissions: read
         can_approve_pull_requests: false
       visibility: public
+      branch_protection:
+        - pattern: main
+          required_reviews: 0
+          enforce_admins: true
+          allow_force_pushes: false
+          allow_deletions: false
       topics: [authjs, hono, sample]
       security:
         vulnerability_alerts: false
@@ -575,6 +724,12 @@ repositories:
         workflow_permissions: write
         can_approve_pull_requests: true
       visibility: public
+      branch_protection:
+        - pattern: main
+          required_reviews: 0
+          enforce_admins: true
+          allow_force_pushes: false
+          allow_deletions: false
       topics: [aws, python, sample, seaborn, slack]
       security:
         vulnerability_alerts: false
@@ -586,6 +741,12 @@ repositories:
         workflow_permissions: write
         can_approve_pull_requests: true
       visibility: public
+      branch_protection:
+        - pattern: main
+          required_reviews: 0
+          enforce_admins: true
+          allow_force_pushes: false
+          allow_deletions: false
       topics: [sample]
       security:
         vulnerability_alerts: false
@@ -674,6 +835,12 @@ repositories:
         workflow_permissions: write
         can_approve_pull_requests: true
       visibility: public
+      branch_protection:
+        - pattern: main
+          required_reviews: 0
+          enforce_admins: true
+          allow_force_pushes: false
+          allow_deletions: false
       topics: [aws-cdk, aws-fargate, sample, typescript]
       security:
         vulnerability_alerts: false
@@ -685,6 +852,12 @@ repositories:
         workflow_permissions: write
         can_approve_pull_requests: true
       visibility: public
+      branch_protection:
+        - pattern: main
+          required_reviews: 0
+          enforce_admins: true
+          allow_force_pushes: false
+          allow_deletions: false
       topics: [aws-cdk, aws-fargate, sample, typescript]
       security:
         vulnerability_alerts: false
