@@ -151,7 +151,7 @@ repositories:
           enforce_admins: true
           allow_force_pushes: false
           allow_deletions: false
-      topics: [declarative, flexbox, layout, office, powerpoint, pptx, pptxgenjs, presentation, slides, typescript]
+      topics: [declarative, flexbox, layout, office, powerpoint, pptx, presentation, slides, typescript]
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
