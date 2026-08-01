@@ -189,6 +189,7 @@ repositories:
       security:
         vulnerability_alerts: true
         automated_security_fixes: true
+
   # --- アプリ ---
   - name: tatami
     spec:
